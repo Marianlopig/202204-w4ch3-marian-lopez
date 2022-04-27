@@ -1,11 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Context from "../../context/Context";
 import Action from "../Action/Action";
 import Display from "../Display/Display";
 
 const Actions = () => {
-  const { display } = useContext(Context);
-  const [calling, setCalling] = useState(false);
+  const { display, calling, setCalling, setDisplay } = useContext(Context);
 
   const getCallClassName = () => {
     if (display.length >= 9) {
@@ -15,9 +14,13 @@ const Actions = () => {
   };
   const call = () => {
     setCalling(true);
+    setTimeout(() => {
+      hang();
+    }, 5000);
   };
   const hang = () => {
     setCalling(false);
+    setDisplay("");
   };
   return (
     <div className="actions">
