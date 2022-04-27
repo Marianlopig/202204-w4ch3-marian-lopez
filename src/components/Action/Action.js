@@ -1,6 +1,6 @@
 const Action = ({ className, text }) => {
   return (
-    <a href="#" className={className}>
+    <a href="/#" className={className}>
       {text}
     </a>
   );
