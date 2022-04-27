@@ -1,6 +1,6 @@
-const Action = ({ className, text }) => {
+const Action = ({ className, text, action }) => {
   return (
-    <a href="/#" className={className}>
+    <a href="/#" className={className} onClick={action}>
       {text}
     </a>
   );
