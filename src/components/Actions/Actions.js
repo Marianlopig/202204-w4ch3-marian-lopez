@@ -4,7 +4,7 @@ import Display from "../Display/Display";
 const Actions = () => {
   return (
     <div className="actions">
-      <Display number={627955776} />
+      <Display />
       {/* <!-- El botón de llamar debe tener la clase "active" cuando -->
           <!-- el número de teléfono tiene 9 cifras --> */}
       <Action className={"call"} text={"Call"} />
