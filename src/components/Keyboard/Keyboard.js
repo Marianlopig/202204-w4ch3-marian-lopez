@@ -6,8 +6,10 @@ const Keyboard = () => {
   const { setDisplay, display } = useContext(Context);
 
   const clickKey = (number) => {
-    const telephoneNumber = display + number;
-    setDisplay(telephoneNumber);
+    if (display.length < 9) {
+      const telephoneNumber = display + number;
+      setDisplay(telephoneNumber);
+    }
   };
 
   const clickDelete = () => {

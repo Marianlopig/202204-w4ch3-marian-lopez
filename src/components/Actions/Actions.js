@@ -1,15 +1,24 @@
+import { useContext } from "react";
+import Context from "../../context/Context";
 import Action from "../Action/Action";
 import Display from "../Display/Display";
 
 const Actions = () => {
+  const { display } = useContext(Context);
+
+  const getCallClassName = () => {
+    if (display.length >= 9) {
+      return "call active";
+    }
+    return "call";
+  };
+  const calling = false;
   return (
     <div className="actions">
       <Display />
-      {/* <!-- El botón de llamar debe tener la clase "active" cuando -->
-          <!-- el número de teléfono tiene 9 cifras --> */}
-      <Action className={"call"} text={"Call"} />
-      {/* <!-- Sólo se tiene que ver un botón u otro --> */}
-      <Action className={"hang active"} text={"Hang"} />
+
+      {!calling && <Action className={getCallClassName()} text={"Call"} />}
+      {calling && <Action className={"hang active"} text={"Hang"} />}
     </div>
   );
 };
