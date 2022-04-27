@@ -1,9 +1,13 @@
-const Key = ({ number, className }) => {
+const Key = ({ number, className, action }) => {
   let finalClassName = "key";
   if (className) {
     finalClassName += " " + className;
   }
-  return <button className={finalClassName}>{number}</button>;
+  return (
+    <button className={finalClassName} onClick={action}>
+      {number}
+    </button>
+  );
 };
 
 export default Key;
