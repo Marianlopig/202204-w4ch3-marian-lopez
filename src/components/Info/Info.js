@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import Context from "../../context/Context";
+
 const Info = ({ text }) => {
-  return <span className="message">{text}</span>;
+  const { calling } = useContext(Context);
+
+  return <span className={calling ? "message" : "off"}>{text}</span>;
 };
 export default Info;
