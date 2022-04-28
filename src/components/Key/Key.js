@@ -1,10 +1,10 @@
-const Key = ({ number, className, action }) => {
+const Key = ({ number, className, action, disabled }) => {
   let finalClassName = "key";
   if (className) {
     finalClassName += " " + className;
   }
   return (
-    <button className={finalClassName} onClick={action}>
+    <button disabled={disabled} className={finalClassName} onClick={action}>
       {number}
     </button>
   );
